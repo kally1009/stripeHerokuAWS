@@ -1,1 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <title>Naturistic</title>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link rel="icon" href="../images/favacon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+
+  <body>
+    <div id="app">
+        <v-app>
+          <v-main>
+                <nav>
+                <div id="logo">
+                  <a href="index.html"><img src="../images/naturstic.png" alt="" height="35px"></a>
+                </div>
+              
+                <ul>
+                  <li class="dropdown">
+                  <button class="dropbtn">Collection</button>
+                  <div class="dropdown-content">
+                    <v-list>
+                      <v-list-item v-for="(category,index) in categories" :key="index" link>
+                        <v-list-item-title v-on:click="page='home', selected_category=category, filteredCategory()">{{ category }}</v-list-item-title>
+                      </v-list-item>
+                    </v-list>
+                  </div>
+                  </li>
+                  <a  id="nav-color" href="#"><li v-on:click="page='about'">About</li></a>
+                  <a href="#"><img src="../images/cart-alt.svg" alt="" height="25px" v-on:click="page='checkout'"></a>
+                </ul>
+              </nav>
+              <div v-if="page=='home'">
+                <div id="hero-section">
+                  <p class="body-text"><strong>{{selected_category}}</strong></p>
+                  <div class="search-bar">
+                    <div class="search-icon">
+                      <img src="../images/search-1.svg" alt="" height="15px">
+                    </div>
+                    <input type="text" placeholder="Search high-resolution photos" v-model="searchString" v-on:keydown.enter="searchProducts">
+                  </div>
+                </div>
+                <!-- <div v-for="product in category_products"> -->
+
+                  <!-- <div v-on:click="getImages(product._id)"> -->
+                  <!-- </div> -->
+                <!-- </div> -->
+                
+                <div id="carousel">
+                <template>
+                  <v-sheet class="mx-auto" elevation="8" max-width="1000" id="carousel">
+                    <v-slide-group class="pa-4" cycle active-class="success" show-arrows>
+                      <v-slide-item v-for="(product, i) in category_products" :key="product._id" v-slot="{ active, toggle }">
+                        <v-card class="ma-4" height="200" width="200" @click="toggle" >
+                        <v-img v-bind:src="product.image" height="200" width="200" v-on:click="active=true">
+                          <v-row class="fill-height" align="center" justify="center">
+
+                          <v-dialog v-if="active" v-model="dialog" persistent max-width="600px">
+                            <template v-slot:activator="{ on }"> 
+                               <v-btn color="primary" dark v-on="on">Open Image</v-btn>
+                            </template>
+                            <v-card>
+                              <v-card flat tile class="d-flex align-end flex-column mb-6">
+                                <v-btn tile color="white" @click="dialog = false" class="elevation-0"><v-icon>mdi-close</v-icon></v-btn>
+                              </v-card>
+                              <v-card-title>
+                                <span class="headline">{{ product.title }}</span>
+                                <v-card-text>{{ product.description }}</v-card-text>
+                              </v-card-title>
+                                
+                              <v-card id="popup" flat tile class="d-flex justify-center mb-6">
+                                <v-img :src="product.image" max-height="300" max-width="auto" contain>
+                              </v-card>
+                              <v-card flat tile class="d-flex align-end flex-column mb-6">
+                                <v-btn tile color="white" class="elevation-0" v-on:click="addToCart(product), dialog=false">Add to cart</v-btn>
+                              </v-card>
+                            </v-card>
+                          </v-dialog>
+                          
+                          </v-row>
+                        </v-card>
+                      </v-slide-item>
+                    </v-slide-group>
+                  </v-sheet>
+                </template>
+                </div>
+              </div>
+
+              <div v-if="page=='about'">
+                <v-card max-width= "1000" id="developers" elvation="14" class="mx-auto">
+                  <v-card-title p="3" class="text-h5"><strong>The Developers</strong></v-card-title>
+                  <v-spacer></v-spacer>
+                  <v-container>
+                    <v-row dense>
+                      <v-col cols="12">
+                        <v-card p="7" color="cyan darken-4" class="white--text">
+                        <v-card-title class="text-h6">Daniel Urias</v-card-title>
+                        <div class="profile-section">
+                          <v-card-subtitle class="about-developer" color="#006064">
+                              Lorem ipsum dolor sit amet, 
+                              consectetur adipiscing elit, sed do eiusmod 
+                              tempor incididunt ut labore et dolore magna aliqua.
+                              Ut enim ad minim veniam, quis nostrud exercitation 
+                              ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                              <br>
+                              <br>
+                              <v-btn fab color="#0097A7" class="mr-icon" small><a href="https://www.linkedin.com/in/daniel-urias-aa89451b2" class="link" target="_blank"><v-icon style="color: white;">mdi-linkedin</v-icon></a></v-btn>
+                              <v-btn fab color="#0097A7" small><a href="https://github.com/danielurias" class="link" target="_blank"><v-icon style="color: white;">mdi-github</v-icon></a></v-btn>
+                          </v-card-subtitle>
+                          <v-card-subtitle><v-img contain src="../images/daniel.jpg" width="300"></v-img></v-card-subtitle>
+                        </div>
+                        </v-card>
+                      </v-col>
+                      <v-spacer></v-spacer>
+                      <v-col cols="12">
+                        <v-card p="7"color="#006064" class="white--text">
+                          <v-card-title class="text-h6">Kalicia Adams</v-card-title>
+                          <div class="profile-section">
+                            <v-card-subtitle><v-img contain src="../images/kalicia.jpg" width="300"></v-img></v-card-subtitle>
+                            <v-card-subtitle class="about-developer">Lorem ipsum dolor sit amet, 
+                              consectetur adipiscing elit, sed do eiusmod 
+                              tempor incididunt ut labore et dolore magna aliqua.
+                              Ut enim ad minim veniam, quis nostrud exercitation 
+                              ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                              <v-spacer></v-spacer>
+                              <br>
+                              <v-btn fab color="#0097A7" class="mr-icon" small><a href="https://www.linkedin.com/in/kalicia-adams-2b489a207" class="link" target="_blank"><v-icon style="color: white;">mdi-linkedin</v-icon></a></v-btn>
+                              <v-btn fab color="#0097A7" small><a href="https://github.com/kally1009" class="link" target="_blank"><v-icon style="color: white;">mdi-github</v-icon></a></v-btn>
+                            </v-card-subtitle>
+                          </div>
+                        </v-card>
+                      </v-col>
+
+                      <v-col col="12">
+                        <v-card p="7" color="#006064" class="white--text">
+                          <v-card-title class="text-h6">Doug Osborn</v-card-title>
+                          <div class="profile-section">
+                            <v-card-subtitle class="about-developer">Lorem ipsum dolor sit amet, 
+                              consectetur adipiscing elit, sed do eiusmod 
+                              tempor incididunt ut labore et dolore magna aliqua.
+                              Ut enim ad minim veniam, quis nostrud exercitation 
+                              ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                              <br>
+                              <br>
+                              <v-btn fab color="#0097A7" class="mr-icon" small><a href="https://www.linkedin.com/in/opensimian" class="link" target="_blank"><v-icon style="color: white;">mdi-linkedin</v-icon></a></v-btn>
+                              <v-btn fab color="#0097A7" small><a href="https://github.com/dsudosborn" class="link" target="_blank"><v-icon style="color: white;">mdi-github</v-icon></a></v-btn>
+                            </v-card-subtitle>
+                            <v-card-subtitle><v-img contain src="../images/doug.png" width="300"></v-img></v-card-subtitle>
+                          </div>
+                        </v-card>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+                </v-card>
+              </div>
+              <div v-if="page=='checkout'" id="checkout">
+                <h2>Checkout</h2>
+                <div id="cg" v-for="(product, i) in cart" :key="i">
+                  <div class="cart-img">
+                    <v-img :src="product.image" height="100px" width="100px">
+                  </div>
+                  <div id="title">
+                    <p>{{ product.title }}</p>
+                  </div>
+                  <div id="price">
+                    <p>Price: ${{ product.price }}</p>
+                  </div>
+                  <div id="remove-btn">
+                    <v-btn tile color="white" class="elevation-0" v-on:click="deleteFromCart(i)"><v-icon>mdi-close</v-icon></v-btn>
+                  </div>
+                  <hr>
+                </div>
+                
+              </div>
+          </v-main>
+        </v-app>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="app.js"></script>
+</html>
