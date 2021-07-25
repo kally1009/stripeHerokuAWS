@@ -8,19 +8,16 @@ const serverURL = 'https://naturistic-dz.herokuapp.com/'
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
   apiVersion: '2020-08-27',
-  appInfo: { // For sample support and debugging, not required for production:
+  appInfo: { //  not required for production:
     name: "naturistic e-store demo",
     version: "0.0.1",
     url: "https://Naturistic.github.io"
   }
 });
 
-
-
-app.use(express.static(serverURL));
-//  app.use(express.urlencoded({extended : false}));
-app.use(
-  express.json({
+app.use(express.static('client));
+                       
+app.use(express.json({
     // We need the raw body to verify webhook signatures.
     // Let's compute it only when hitting the Stripe webhook endpoint.
     verify: function (req, res, buf) {
@@ -36,40 +33,13 @@ app.get('/', (req, res) => {
   res.sendFile(path);
 });
 
-app.get('/about', (req, res) => {
-  console.log('rendering about page');
-  const path = resolve('about.html');
-  res.sendFile(path);
-});
+// minimize endpoints to fit rebuilt SPA style
 
-app.get('/cancelled', (req, res) => {
-  const path = resolve('cancelled.html');
-  res.sendFile(path);
-});
+// Use STRIPE API to get all of the prices that have been defined.
+// we use the EXPAND option on the product link in the price object 
+// This returns a compund object we can use to extract our required data
+// It also reduces the number of API calls to prevent throttling by STRIPE
 
-
-
-app.get('/products', async (req, res) => {
-
-  console.log("getting all products");
-
-  try {
-
-    const products = await stripe.products.list({ limit: 99, });
-
-    //console.log(products.data);
-
-    res.status(200).json(products)
-
-  } catch (error) {
-
-    return res.status(400).send({Error: error.raw.message, });
-
-  }
-
-});
-
-// Get List of all saved card of the customers
 app.get("/prices", async (req, res) => {
 
   let productPrices = [];
