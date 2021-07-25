@@ -1,0 +1,267 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1000px 1fr;
+    margin:auto;
+}
+
+#app {
+    grid-column: 1/4;
+}
+
+/* Navigation */
+
+nav {
+    display: grid;
+    grid-column: 1/4;
+    grid-template-columns: 1fr 200px 800px 1fr;
+    height: 60px;
+}
+
+nav ul {
+    grid-column-start: 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    font-size: 16px;
+    padding-left: 20px;
+    list-style: none;
+    font-weight: bold;
+}
+
+nav ul img {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    grid-column-start: 2;
+    display: flex;
+    align-items: center;
+}
+
+/* Hero */
+
+#hero-section {
+    background-image: url("../images/desert_mountains.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.body-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    grid-column-start: 2;
+    font-size: 18px;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.search-bar {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar input {
+    background-color: white;
+    height: 40px;
+    width: 500px;
+    outline: none;
+    padding-left: 10px;
+}
+
+.search-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 40px;
+    padding: 0px 10px;
+}
+
+/* Image slider */
+
+#carousel {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.slider {
+    grid-column-start: 2;
+    display: flex;
+    justify-content: center;
+}
+
+/* Pop Out */
+
+#popup {
+    padding-bottom: 80px;
+}
+
+/* About */
+
+#developers {
+    grid-column-start: 2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: left;
+    
+}
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.about-developer {
+    padding: 20px;
+    margin: 0px;
+
+}
+
+.name {
+    padding-left: 20px;
+}
+.white {
+    color: white;
+}
+.primary-color {
+    background-color: #006064;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.mr-icon {
+    margin-right: 10px;
+}
+
+.collection {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    text-transform: none;
+}
+
+#about-c {
+    grid-column: 2;
+}
+#nav-color {
+    color: black;
+}
+
+#collection-items {
+    color: black;
+    background-color: white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.cart-display {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+.center {
+    text-align:center;
+}
+
+/* Checkout */
+
+#checkout {
+    display: grid;
+    grid-template-columns: 1fr 1000px 1fr;
+}
+
+h2 {
+    grid-column-start: 2;
+    padding-left: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#cg {
+    display: grid;
+    grid-template-columns: 1fr 100px 200px 200px 200px 1fr;
+    grid-column-start: 2;
+    padding-bottom: 20px;
+}
+
+.cart-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 2;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 3;
+}
+
+#price {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    grid-column-start: 4;
+}
+
+#remove-btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    grid-column-start: 5;
+}
+
+hr {
+    grid-column: 2/6;
+    margin-top: 20px;
+}
