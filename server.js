@@ -15,8 +15,8 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
   }
 });
 
-app.use(express.static('client));
-                       
+app.use(express.static('/client));
+
 app.use(express.json({
     // We need the raw body to verify webhook signatures.
     // Let's compute it only when hitting the Stripe webhook endpoint.
@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 // minimize endpoints to fit rebuilt SPA style
 
 // Use STRIPE API to get all of the prices that have been defined.
-// we use the EXPAND option on the product link in the price object 
+// we use the EXPAND option on the product link in the price object
 // This returns a compund object we can use to extract our required data
 // It also reduces the number of API calls to prevent throttling by STRIPE
 
