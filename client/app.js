@@ -16,7 +16,7 @@ var app = new Vue({
             {
                 title:"Ocean Water",
                 bigImage:"",
-                image:"../images/wave.jpg",
+                image:"./images/wave.jpg",
                 description:"Ocean Water and waves in Southern California. Photo by Lorem Ipsum",
                 tags:["Water"],
                 price:1.00
@@ -25,7 +25,7 @@ var app = new Vue({
             {
                 title:"Water Fall",
                 bigImage:"",
-                image:"../images/waterfall.jpg",
+                image:"./images/waterfall.jpg",
                 description:"The mystical falls in Niagra, Niagra Falls.",
                 tags: ["Water"],
                 price: 2.00
@@ -34,7 +34,7 @@ var app = new Vue({
             {
                 title:"Snowy Trees",
                 bigImage:"",
-                image:"../images/sun_snow.jpg",
+                image:"./images/sun_snow.jpg",
                 description:"Trees and Snow in Halifax Canada during the winter.",
                 tags: ["Trees"],
                 price: 1.00
@@ -43,7 +43,7 @@ var app = new Vue({
             {
                 title:"Sunset Mountain",
                 bigImage:"",
-                image:"../images/sun_mountain.jpg",
+                image:"./images/sun_mountain.jpg",
                 description:"Southern Utah sunset with desert mountains",
                 tags:["Mountains","Sunsets", "Desert"],
                 price: 2.00
@@ -53,7 +53,7 @@ var app = new Vue({
                 title:"Snow Mountains",
                 bigImage:"",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                image:"../images/snow_mountain1.jpg",
+                image:"./images/snow_mountain1.jpg",
                 description:"Desert Mountain",
                 tags:["Mountains"],
                 price: 1.00
@@ -62,7 +62,7 @@ var app = new Vue({
             {
                 title:"Underwater",
                 bigImage:"",
-                image:"../images/splashing.jpg",
+                image:"./images/splashing.jpg",
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 tags:["Water"],
                 price: 1.00
