@@ -1,4 +1,4 @@
-var url = "http://localhost:4242"
+var url = "https://naturistic-demo.herokuapp.com/"
 var app = new Vue({
     el: "#app",
     data: {
@@ -10,7 +10,7 @@ var app = new Vue({
         page:"home",
         category_products:[],
         cart:[
-            
+
         ],
         products: [
             {
@@ -20,7 +20,7 @@ var app = new Vue({
                 description:"Ocean Water and waves in Southern California. Photo by Lorem Ipsum",
                 tags:["Water"],
                 price:1.00
-                
+
             },
             {
                 title:"Water Fall",
@@ -29,7 +29,7 @@ var app = new Vue({
                 description:"The mystical falls in Niagra, Niagra Falls.",
                 tags: ["Water"],
                 price: 2.00
-                
+
             },
             {
                 title:"Snowy Trees",
@@ -38,7 +38,7 @@ var app = new Vue({
                 description:"Trees and Snow in Halifax Canada during the winter.",
                 tags: ["Trees"],
                 price: 1.00
-                
+
             },
             {
                 title:"Sunset Mountain",
@@ -47,7 +47,7 @@ var app = new Vue({
                 description:"Southern Utah sunset with desert mountains",
                 tags:["Mountains","Sunsets", "Desert"],
                 price: 2.00
-                
+
             },
             {
                 title:"Snow Mountains",
@@ -57,7 +57,7 @@ var app = new Vue({
                 description:"Desert Mountain",
                 tags:["Mountains"],
                 price: 1.00
-                
+
             },
             {
                 title:"Underwater",
@@ -66,7 +66,7 @@ var app = new Vue({
                 description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 tags:["Water"],
                 price: 1.00
-                
+
             },
         ],
         categories:[
@@ -81,7 +81,7 @@ var app = new Vue({
         ]
 
     },
-    vuetify: new Vuetify(), 
+    vuetify: new Vuetify(),
     created: function(){
       this.filteredCategory();
     },
@@ -92,13 +92,13 @@ var app = new Vue({
                     console.log(data);
                     if(data){
                         app.products=data;
-                    } 
+                    }
                 })
             })
         },
         postPrice: function(price){
             line_items: [
-                //loop through for each object in the cart. 
+                //loop through for each object in the cart.
                 {
                     price: price,
                     quantity: 1
@@ -121,7 +121,7 @@ var app = new Vue({
             searchString = searchString.trim().toLowerCase();
 
             this.category_products.forEach(function(item){
-                
+
                 if(item.title.toLowerCase().indexOf(searchString)!==-1){
                     console.log(item.title)
                     product_array.push(item)
@@ -161,9 +161,9 @@ var app = new Vue({
                     })
                 })
                // return this.category_products;
-        
+
             }
-    
+
         }
     }
     });
