@@ -1,5 +1,4 @@
 var url = "https://naturistic-demo.herokuapp.com"
-var util = require('util');
 var app = new Vue({
     el: "#app",
     data: {
@@ -91,7 +90,7 @@ var app = new Vue({
         getProducts: function(){
             fetch(`${url}/prices`).then(function(response){
                 response.json().then(function(data){
-                    console.log(util.inspect(data));
+                    console.log(data);
                     if(data){
                         app.products=data;
                     }
