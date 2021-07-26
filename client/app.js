@@ -1,4 +1,5 @@
 var url = "https://naturistic-demo.herokuapp.com"
+var util = require('util');
 var app = new Vue({
     el: "#app",
     data: {
