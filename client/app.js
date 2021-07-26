@@ -1,4 +1,4 @@
-var url = "https://naturistic-demo.herokuapp.com/"
+var url = "https://naturistic-demo.herokuapp.com"
 var app = new Vue({
     el: "#app",
     data: {
