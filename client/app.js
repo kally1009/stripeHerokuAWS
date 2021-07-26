@@ -90,7 +90,7 @@ var app = new Vue({
         getProducts: function(){
             fetch(`${url}/prices`).then(function(response){
                 response.json().then(function(data){
-                    console.log(data);
+                    console.log(util.inspect(data));
                     if(data){
                         app.products=data;
                     }
