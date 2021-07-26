@@ -148,7 +148,7 @@ var app = new Vue({
         },
         filteredCategory: function(){
             if(this.selected_category=="Highlights"){
-                this.category_products=this.products
+                this.category_products=app.products
                // return this.category_products;
             }
             else{
