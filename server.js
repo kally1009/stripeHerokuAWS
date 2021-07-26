@@ -1,4 +1,5 @@
 const express = require('express');
+const util = require('util');
 const app = express();
 const { resolve } = require('path');
 // Copy the .env.example in the root into a .env file in this folder
