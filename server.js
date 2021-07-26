@@ -4,7 +4,7 @@ const { resolve } = require('path');
 // Copy the .env.example in the root into a .env file in this folder
 //require('dotenv').config({ path: './.env' });
 
-const serverURL = 'https://naturistic-dz.herokuapp.com/'
+const serverURL = 'https://naturistic-demo.herokuapp.com'
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
   apiVersion: '2020-08-27',
