@@ -63,7 +63,7 @@ app.get("/prices", async (req, res) => {
           description: price.product.description,
           image: price.product.images[0],
           bigImage: price.product.metadata.bigURL,
-          image: price.product.metadata.tags,
+          tags: price.product.metadata.tags,
        };
        if(obj.image) {
          productPrices.push(obj);
