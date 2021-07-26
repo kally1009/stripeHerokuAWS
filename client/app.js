@@ -153,7 +153,7 @@ var app = new Vue({
             }
             else{
                     this.category_products=[]
-                    this.products.forEach(function(product,index){
+                    app.products.forEach(function(product,index){
                     product.tags.filter(function(tag){
                         if(tag == app.selected_category){
                             app.category_products.push(product);
