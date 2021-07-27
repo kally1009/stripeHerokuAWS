@@ -183,11 +183,12 @@
 
 
                 <div id="cg" v-for="(product, i) in cart" :key="i">
+                  console.log(product);
                   <div class="cart-img">
                     <v-img :src="product.image" height="100px" width="100px">
                   </div>
                   <div id="title">
-                    <p>{{ product.description }}</p>
+                    <p>{{ product.name }}</p>
                   </div>
                   <div id="price">
                     <p>Price: ${{product.amount}}</p>
