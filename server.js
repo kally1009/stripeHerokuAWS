@@ -104,17 +104,8 @@ app.post('/create-checkout-session', async (req, res) => {
 
   const { quantity } = req.body;
 
-  // The list of supported payment method types. We fetch this from the
-  // environment variables in this sample. In practice, users often hard code a
-  // list of strings for the payment method types they plan to support.
   const pmTypes = ('card').split(',').map((m) => m.trim());
 
-  // Create new Checkout Session for the order
-  // Other optional params include:
-  // [billing_address_collection] - to display billing address details on the page
-  // [customer] - if you have an existing Stripe Customer ID
-  // [customer_email] - lets you prefill the email input in the Checkout page
-  // For full details see https://stripe.com/docs/api/checkout/sessions/create
   const session = await stripe.checkout.sessions.create({
     payment_method_types: pmTypes,
     mode: 'payment',
