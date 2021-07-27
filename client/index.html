@@ -187,7 +187,7 @@
                     <v-img :src="product.image" height="100px" width="100px">
                   </div>
                   <div id="title">
-                    <p>{{ product.title }}</p>
+                    <p>{{ product.name }}</p>
                   </div>
                   <div id="price">
                     <p>Price: ${{product.amount}}</p>
@@ -201,7 +201,7 @@
                   <v-btn id="buy-btn" color="#006064" dark v-on:click="postPrice" v-model="cart">Checkout</v-btn>
                 </div>
               </div>
-              
+
           </v-main>
         </v-app>
     </div>
