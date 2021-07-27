@@ -70,7 +70,6 @@ app.get("/prices", async (req, res) => {
 
        if(obj.tags){
          obj.tags = obj.tags.split(',');
-         console.log(obj.tags);
        }
 
        if(obj.image) {
