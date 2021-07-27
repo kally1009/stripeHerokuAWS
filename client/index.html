@@ -7,7 +7,7 @@
     <title>Naturistic</title>
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
-    <link rel="icon" href="../images/favacon.png" type="image/x-icon" />
+    <link rel="icon" href="/images/favacon.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
                 <div id="logo">
                   <a href="index.html"><img src="../images/naturstic.png" alt="" height="35px"></a>
                 </div>
-              
+
                 <ul>
                   <li class="dropdown">
                   <button class="dropbtn">Collection</button>
@@ -55,7 +55,7 @@
                   <!-- <div v-on:click="getImages(product._id)"> -->
                   <!-- </div> -->
                 <!-- </div> -->
-                
+
                 <div id="carousel">
                 <template>
                   <v-sheet class="mx-auto" elevation="8" max-width="1000" id="carousel">
@@ -66,7 +66,7 @@
                           <v-row class="fill-height" align="center" justify="center">
 
                           <v-dialog v-if="active" v-model="dialog" persistent max-width="600px">
-                            <template v-slot:activator="{ on }"> 
+                            <template v-slot:activator="{ on }">
                                <v-btn color="primary" dark v-on="on">Open Image</v-btn>
                             </template>
                             <v-card>
@@ -77,7 +77,7 @@
                                 <span class="headline">{{ product.title }}</span>
                                 <v-card-text>{{ product.description }}</v-card-text>
                               </v-card-title>
-                                
+
                               <v-card id="popup" flat tile class="d-flex justify-center mb-6">
                                 <v-img :src="product.image" max-height="300" max-width="auto" contain>
                               </v-card>
@@ -86,7 +86,7 @@
                               </v-card>
                             </v-card>
                           </v-dialog>
-                          
+
                           </v-row>
                         </v-card>
                       </v-slide-item>
@@ -107,11 +107,11 @@
                         <v-card-title class="text-h6">Daniel Urias</v-card-title>
                         <div class="profile-section">
                           <v-card-subtitle class="about-developer" color="#006064">
-                              Lorem ipsum dolor sit amet, 
-                              consectetur adipiscing elit, sed do eiusmod 
+                              Lorem ipsum dolor sit amet,
+                              consectetur adipiscing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua.
-                              Ut enim ad minim veniam, quis nostrud exercitation 
-                              ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                              Ut enim ad minim veniam, quis nostrud exercitation
+                              ullamco laboris nisi ut aliquip ex ea commodo consequat.
                               <br>
                               <br>
                               <v-btn fab color="#0097A7" class="mr-icon" small><a href="https://www.linkedin.com/in/daniel-urias-aa89451b2" class="link" target="_blank"><v-icon style="color: white;">mdi-linkedin</v-icon></a></v-btn>
@@ -127,11 +127,11 @@
                           <v-card-title class="text-h6">Kalicia Adams</v-card-title>
                           <div class="profile-section">
                             <v-card-subtitle><v-img contain src="../images/kalicia.jpg" width="300"></v-img></v-card-subtitle>
-                            <v-card-subtitle class="about-developer">Lorem ipsum dolor sit amet, 
-                              consectetur adipiscing elit, sed do eiusmod 
+                            <v-card-subtitle class="about-developer">Lorem ipsum dolor sit amet,
+                              consectetur adipiscing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua.
-                              Ut enim ad minim veniam, quis nostrud exercitation 
-                              ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                              Ut enim ad minim veniam, quis nostrud exercitation
+                              ullamco laboris nisi ut aliquip ex ea commodo consequat.
                               <v-spacer></v-spacer>
                               <br>
                               <v-btn fab color="#0097A7" class="mr-icon" small><a href="https://www.linkedin.com/in/kalicia-adams-2b489a207" class="link" target="_blank"><v-icon style="color: white;">mdi-linkedin</v-icon></a></v-btn>
@@ -145,11 +145,11 @@
                         <v-card p="7" color="#006064" class="white--text">
                           <v-card-title class="text-h6">Doug Osborn</v-card-title>
                           <div class="profile-section">
-                            <v-card-subtitle class="about-developer">Lorem ipsum dolor sit amet, 
-                              consectetur adipiscing elit, sed do eiusmod 
+                            <v-card-subtitle class="about-developer">Lorem ipsum dolor sit amet,
+                              consectetur adipiscing elit, sed do eiusmod
                               tempor incididunt ut labore et dolore magna aliqua.
-                              Ut enim ad minim veniam, quis nostrud exercitation 
-                              ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                              Ut enim ad minim veniam, quis nostrud exercitation
+                              ullamco laboris nisi ut aliquip ex ea commodo consequat.
                               <br>
                               <br>
                               <v-btn fab color="#0097A7" class="mr-icon" small><a href="https://www.linkedin.com/in/opensimian" class="link" target="_blank"><v-icon style="color: white;">mdi-linkedin</v-icon></a></v-btn>
@@ -180,7 +180,7 @@
                   </div>
                   <hr>
                 </div>
-                
+
               </div>
           </v-main>
         </v-app>
