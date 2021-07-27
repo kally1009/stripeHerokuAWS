@@ -104,6 +104,12 @@ var app = new Vue({
         filteredCategory: function(){
             console.log(this.selected_catgory);
             console.log(selected_catgory);
+
+            if (selected_category === undefined) {
+              console.log("setting selected category to HIGHLIGHTS");
+              selected_category = "Highlights";
+            }
+
             if(app.selected_category=="Highlights"){
                 this.category_products=app.products
                 return this.category_products;
