@@ -1,5 +1,5 @@
 var url = "https://naturistic-demo.herokuapp.com"
-var selected_catgory = "Highlights"
+var selected_category = "Highlights"
 var app = new Vue({
     el: "#app",
     data: {
@@ -102,8 +102,8 @@ var app = new Vue({
         },
 
         filteredCategory: function(){
-            console.log(this.selected_catgory);
-            console.log(selected_catgory);
+            console.log(this.selected_category);
+            console.log(selected_category);
 
             if (this.selected_category === undefined) {
               console.log("setting selected category to HIGHLIGHTS");
