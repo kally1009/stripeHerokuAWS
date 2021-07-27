@@ -131,11 +131,11 @@ var app = new Vue({
                       })
                     }
                 })
-               // return this.category_products;  
+               // return this.category_products;
              }
 
            },
 
-
+}
 
     });
