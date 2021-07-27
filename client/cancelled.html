@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Naturistic</title>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link rel="icon" href="../images/favacon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+  </head>
+
+  <body>
+    <div id="app">
+      <v-app>
+        <v-main>
+          <nav>
+            <div id="logo">
+              <a href="index.html"><img src="../images/naturstic.png" alt="" height="35px"></a>
+            </div>
+          </nav>
+          <div class="canceled">
+            <v-card id="cancel-card" class="grid-center">
+              <v-card-title class="justify-center">Your payment was canceled</v-card-title>
+              <v-card-text>
+              <button><a href="index.html" class="black--text" ><v-icon>mdi-keyboard-backspace</v-icon>Back to Naturistic</a></button></v-card-text>
+            </v-card>
+          </div>
+        </v-main>
+      </v-app>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="app.js"></script>
+</html>
