@@ -6,6 +6,7 @@ var app = new Vue({
         dialog: false,
         active: false,
         searchString:"",
+        selected_category:"Highlights",
         search_string:"",
         page:"home",
         category_products:[],
