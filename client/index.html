@@ -98,20 +98,35 @@
 
               <div v-if="page=='about'">
                 <v-card max-width= "1000" id="developers" elvation="14" class="mx-auto">
-                  <v-card-title p="3" class="text-h5"><strong>The Developers</strong></v-card-title>
+                  <v-card-title p="3" class="text-h5"><strong>The Application and Developers</strong></v-card-title>
                   <v-spacer></v-spacer>
                   <v-container>
                     <v-row dense>
+                      <v-col cols="12">
+                        <v-card p="7" flat class="black--text">
+                        <v-card-title class="justify-center">Naturistic</v-card-title>
+                        <div class="profile-section">
+                          <v-card-subtitle><v-img src="../images/favacon.png" width="100" height="100" contain></v-img></v-card-subtitle>
+                          <v-card-subtitle class="about-developer">
+                            Naturistic is a single page application (SPA) storeforont for digital content delivery.
+                            It uses Web technologies including HTML,CSS, Javascript, JSON, Vue, Vuetify, Node,and Express.
+                            It implements REST APIs to STRIPE for payment processing and AWS S3 buckets for content delivery.
+                            We used GIT-GITHUB-HEROKU for source code control and automated deployment stack.
+                              <br>
+                              <br>
+                          </v-card-subtitle>
+
+                        </div>
+                        </v-card>
+                      </v-col>
                       <v-col cols="12">
                         <v-card p="7" color="cyan darken-4" class="white--text">
                         <v-card-title class="text-h6">Daniel Urias</v-card-title>
                         <div class="profile-section">
                           <v-card-subtitle class="about-developer" color="#006064">
-                              Lorem ipsum dolor sit amet,
-                              consectetur adipiscing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua.
-                              Ut enim ad minim veniam, quis nostrud exercitation
-                              ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Daniel is currently a senior student at DSU pursuing a bachelor’s degree in Web Design & Development.
+                            He completed a certificate in Digital Media Design at Dixie Technical College in 2020. For Naturistic, Daniel
+                            the design and mockup of the web app including the logo design. He implemented the UI with Vuetify, HTML, and CSS.
                               <br>
                               <br>
                               <v-btn fab color="#0097A7" class="mr-icon" small><a href="https://www.linkedin.com/in/daniel-urias-aa89451b2" class="link" target="_blank"><v-icon style="color: white;">mdi-linkedin</v-icon></a></v-btn>
@@ -127,11 +142,10 @@
                           <v-card-title class="text-h6">Kalicia Adams</v-card-title>
                           <div class="profile-section">
                             <v-card-subtitle><v-img contain src="../images/kalicia.jpg" width="300"></v-img></v-card-subtitle>
-                            <v-card-subtitle class="about-developer">Lorem ipsum dolor sit amet,
-                              consectetur adipiscing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua.
-                              Ut enim ad minim veniam, quis nostrud exercitation
-                              ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            <v-card-subtitle class="about-developer">Kalicia is a Junior at Dixie State University studying Computer Science.
+                              She has lived in Southern Utah most of her life and loves it here. Kalicia was the project lead for Naturistic and
+                              worked mostly in Vuejs and some Vuetify on the front end. She implemented the search bar, the different category selection,
+                              and the methods for the cart functionality and functions interacting with the server.
                               <v-spacer></v-spacer>
                               <br>
                               <v-btn fab color="#0097A7" class="mr-icon" small><a href="https://www.linkedin.com/in/kalicia-adams-2b489a207" class="link" target="_blank"><v-icon style="color: white;">mdi-linkedin</v-icon></a></v-btn>
@@ -145,11 +159,8 @@
                         <v-card p="7" color="#006064" class="white--text">
                           <v-card-title class="text-h6">Doug Osborn</v-card-title>
                           <div class="profile-section">
-                            <v-card-subtitle class="about-developer">Lorem ipsum dolor sit amet,
-                              consectetur adipiscing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua.
-                              Ut enim ad minim veniam, quis nostrud exercitation
-                              ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            <v-card-subtitle class="about-developer">Doug .... Doug did UX design, UI testing, STRIPE API integration, AWS s3 integration,
+                              Node/Express server design and implementation, and test product generation for Naturistic.
                               <br>
                               <br>
                               <v-btn fab color="#0097A7" class="mr-icon" small><a href="https://www.linkedin.com/in/opensimian" class="link" target="_blank"><v-icon style="color: white;">mdi-linkedin</v-icon></a></v-btn>
@@ -163,6 +174,7 @@
                   </v-container>
                 </v-card>
               </div>
+              
               <div v-if="page=='checkout'" id="checkout">
                 <h2>Checkout</h2>
                 <div id="cg" v-for="(product, i) in cart" :key="i">
