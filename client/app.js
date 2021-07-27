@@ -112,7 +112,7 @@ var app = new Vue({
 
             if(app.selected_category=="Highlights"){
                 this.category_products=app.products
-                return this.category_products;
+//                return this.category_products;
             }
             else{
                     this.category_products=[]
