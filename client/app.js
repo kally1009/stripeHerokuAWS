@@ -97,12 +97,10 @@ var app = new Vue({
 
         addToCart: function(product){
             app.cart.push(product);
-            console.log(app.cart);
         },
 
         deleteFromCart: function(index){
             app.cart.splice(index,1);
-            console.log(app.cart);
         },
 
         filteredCategory:  function (selected_category)   {
