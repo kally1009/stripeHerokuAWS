@@ -29,10 +29,12 @@ var app = new Vue({
 
     },
     vuetify: new Vuetify(),
+
     created: function(){
       this.getProducts();
-      this.filteredCategory();
+//      this.filteredCategory();
     },
+
     methods:{
 
         getProducts: function(){
@@ -44,6 +46,7 @@ var app = new Vue({
 //                    console.log(data);
                     if(data){
                         app.products=data;
+                        app.category_products = app.products;
                     }
                 })
             })
