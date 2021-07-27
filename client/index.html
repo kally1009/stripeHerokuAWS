@@ -31,7 +31,7 @@
                   <div class="dropdown-content">
                     <v-list>
                       <v-list-item v-for="(category,index) in categories" :key="index" link>
-                        <v-list-item-title v-on:click="page='home', app.selected_category=category, filteredCategory()">{{ category }}</v-list-item-title>
+                        <v-list-item-title v-on:click="page='home', selected_category=category, filteredCategory()">{{ category }}</v-list-item-title>
                       </v-list-item>
                     </v-list>
                   </div>
@@ -42,7 +42,7 @@
               </nav>
               <div v-if="page=='home'">
                 <div id="hero-section">
-                  <p class="body-text"><strong>{{app.selected_category}}</strong></p>
+                  <p class="body-text"><strong>{{selected_category}}</strong></p>
                   <div class="search-bar">
                     <div class="search-icon">
                       <img src="../images/search-1.svg" alt="" height="15px">
