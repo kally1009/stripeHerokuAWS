@@ -122,16 +122,16 @@ var app = new Vue({
 
                     this.products.forEach((product,index)=>{
                       console.log(product);
-                      if (product.tags){
+                      if (product.tags) {
                         product.tags.filter((tag) =>{
                         if(tag == selected_category){
                             this.category_products.push(product);
                             console.log(product, tag);
                         }
                       }
-                    })
                 })
                // return this.category_products;
+             }
 
             }
 
