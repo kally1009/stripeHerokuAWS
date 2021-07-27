@@ -104,9 +104,9 @@ var app = new Vue({
             console.log(app.cart);
         },
 
-        filteredCategory: (selected_category)  => {
+        filteredCategory:  function (selected_category)   {
             console.log(selected_category);
-//            console.log(selected_category);
+//            console.log(sele cted_category);
 
             if (selected_category === undefined) {
               console.log("setting selected category to HIGHLIGHTS");
