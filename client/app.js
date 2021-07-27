@@ -95,7 +95,7 @@ var app = new Vue({
 
             fetch(`${url}/prices`).then(function(response){
                 response.json().then(function(data){
-                    console.log(data);
+//                    console.log(data);
                     if(data){
                         app.products=data;
                     }
