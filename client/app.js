@@ -87,7 +87,12 @@ var app = new Vue({
       this.filteredCategory();
     },
     methods:{
+
+
         getProducts: function(){
+
+            console.log("Hit /prices endpoint for products");
+
             fetch(`${url}/prices`).then(function(response){
                 response.json().then(function(data){
                     console.log(data);
