@@ -128,13 +128,14 @@ var app = new Vue({
                             this.category_products.push(product);
                             console.log(product, tag);
                         }
-                      }
+                      })
+                    }
                 })
                // return this.category_products;
              }
 
-           })
+           },
 
-        }
-    }
+
+
     });
