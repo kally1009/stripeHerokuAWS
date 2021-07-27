@@ -52,22 +52,23 @@ var app = new Vue({
             })
         },
 
-        postPrice: function(price){
-            line_items: [
+        postPrice: ()=>{
+            var line_items=[]
                 //loop through for each object in the cart.
-                {
-                    price: price,
-                    quantity: 1
-                }
-            ]
+                this.cart.forEach((product,index)=>{
+                    var price=product.price
+                    let Obj = {
+                        price: price,
+                        quantity: 1
+                    }
+                    line_items.push(Obj);
+                }),
             fetch(`${url}/create-checkout-session`,{
                 method: "POST",
                 headers:{
                     "content-type":"application/json"
                 },
                 body: JSON.stringify(line_items)
-            }).then(function(response){
-                console.log(price)
             })
         },
 
