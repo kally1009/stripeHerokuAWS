@@ -174,7 +174,7 @@
                   </v-container>
                 </v-card>
               </div>
-              
+
               <div v-if="page=='checkout'" id="checkout">
                 <h2>Checkout</h2>
                 <div id="cg" v-for="(product, i) in cart" :key="i">
@@ -185,7 +185,7 @@
                     <p>{{ product.title }}</p>
                   </div>
                   <div id="price">
-                    <p>Price: ${{ product.price }}</p>
+                    <p>Price: ${{ product.amount }}</p>
                   </div>
                   <div id="remove-btn">
                     <v-btn tile color="white" class="elevation-0" v-on:click="deleteFromCart(i)"><v-icon>mdi-close</v-icon></v-btn>
