@@ -155,13 +155,12 @@ var app = new Vue({
             console.log(this.selected_catgory);
             if(this.selected_category=="Highlights"){
                 this.category_products=app.products
-               // return this.category_products;
+                return this.category_products;
             }
             else{
                     this.category_products=[]
-                    console.log(this.products);
-                    console.log (app.products);
-                    app.products.forEach(function(product,index){
+
+                    this.products.forEach(function(product,index){
                     product.tags.filter(function(tag){
                         if(tag == app.selected_category){
                             app.category_products.push(product);
