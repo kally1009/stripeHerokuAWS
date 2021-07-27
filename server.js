@@ -59,7 +59,7 @@ app.get("/prices", async (req, res) => {
         let obj = {
           priceId: price.id,
           currency: price.currency,
-          amount: price.unit_amount_decimal,
+          amount: (price.unit_amount_decimal/100).toFixed(2),
           product: price.product.id,
           name: price.product.name,
           description: price.product.description,
