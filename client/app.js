@@ -104,7 +104,7 @@ var app = new Vue({
             console.log(app.cart);
         },
 
-        filteredCategory: function(){
+        filteredCategory: ()  => {
             console.log(this.selected_category);
 //            console.log(selected_category);
 
@@ -128,7 +128,7 @@ var app = new Vue({
                         }
                     })
                 })
-               //return this.category_products;
+               // return this.category_products;
 
             }
 
