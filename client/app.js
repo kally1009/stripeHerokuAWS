@@ -25,7 +25,7 @@ var app = new Vue({
             "Desert",
             "Sunsets",
             "Flowers"
-        ]
+        ],
 
     },
     vuetify: new Vuetify(),
@@ -120,8 +120,8 @@ var app = new Vue({
             else{
                     this.category_products=[]
 
-                    this.products.forEach(function(product,index){
-                    product.tags.filter(function(tag){
+                    this.products.forEach((product,index)=>{
+                    product.tags.filter((tag) =>{
                         if(tag == selected_category){
                             this.category_products.push(product);
                             console.log(product, tag);
