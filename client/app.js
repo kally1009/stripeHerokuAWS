@@ -104,7 +104,7 @@ var app = new Vue({
             console.log(app.cart);
         },
 
-        filteredCategory: ()  => {
+        filteredCategory: (selected_category)  => {
             console.log(this.selected_category);
 //            console.log(selected_category);
 
