@@ -1,4 +1,5 @@
 var url = "https://naturistic-demo.herokuapp.com"
+var selected_catgory = "Highlights"
 var app = new Vue({
     el: "#app",
     data: {
@@ -13,61 +14,7 @@ var app = new Vue({
 
         ],
         products: [
-            {
-                title:"Ocean Water",
-                bigImage:"",
-                image:"/images/wave.jpg",
-                description:"Ocean Water and waves in Southern California. Photo by Lorem Ipsum",
-                tags:["Water"],
-                price:1.00
 
-            },
-            {
-                title:"Water Fall",
-                bigImage:"",
-                image:"/images/waterfall.jpg",
-                description:"The mystical falls in Niagra, Niagra Falls.",
-                tags: ["Water"],
-                price: 2.00
-
-            },
-            {
-                title:"Snowy Trees",
-                bigImage:"",
-                image:"/images/sun_snow.jpg",
-                description:"Trees and Snow in Halifax Canada during the winter.",
-                tags: ["Trees"],
-                price: 1.00
-
-            },
-            {
-                title:"Sunset Mountain",
-                bigImage:"",
-                image:"/images/sun_mountain.jpg",
-                description:"Southern Utah sunset with desert mountains",
-                tags:["Mountains","Sunsets", "Desert"],
-                price: 2.00
-
-            },
-            {
-                title:"Snow Mountains",
-                bigImage:"",
-                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                image:"/images/snow_mountain1.jpg",
-                description:"Desert Mountain",
-                tags:["Mountains"],
-                price: 1.00
-
-            },
-            {
-                title:"Underwater",
-                bigImage:"",
-                image:"/images/splashing.jpg",
-                description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                tags:["Water"],
-                price: 1.00
-
-            },
         ],
         categories:[
             "Highlights",
@@ -88,7 +35,6 @@ var app = new Vue({
     },
     methods:{
 
-
         getProducts: function(){
 
             console.log("Hit /prices endpoint for products");
@@ -102,6 +48,7 @@ var app = new Vue({
                 })
             })
         },
+
         postPrice: function(price){
             line_items: [
                 //loop through for each object in the cart.
@@ -143,14 +90,17 @@ var app = new Vue({
             searchString="";
 
         },
+
         addToCart: function(product){
             app.cart.push(product);
             console.log(app.cart);
         },
+
         deleteFromCart: function(index){
             app.cart.splice(index,1);
             console.log(app.cart);
         },
+
         filteredCategory: function(){
             console.log(this.selected_catgory);
             if(this.selected_category=="Highlights"){
