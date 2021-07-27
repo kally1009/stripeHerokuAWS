@@ -105,15 +105,15 @@ var app = new Vue({
         },
 
         filteredCategory: (selected_category)  => {
-            console.log(this.selected_category);
+            console.log(selected_category);
 //            console.log(selected_category);
 
-            if (this.selected_category === undefined) {
+            if (selected_category === undefined) {
               console.log("setting selected category to HIGHLIGHTS");
-              this.selected_category = "Highlights";
+              selected_category = "Highlights";
             }
 
-            if(this.selected_category=="Highlights"){
+            if(selected_category=="Highlights"){
                 this.category_products=app.products
 //                return this.category_products;
             }
@@ -122,7 +122,7 @@ var app = new Vue({
 
                     this.products.forEach(function(product,index){
                     product.tags.filter(function(tag){
-                        if(tag == app.selected_category){
+                        if(tag == selected_category){
                             this.category_products.push(product);
                             console.log(product, tag);
                         }
