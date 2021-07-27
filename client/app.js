@@ -126,7 +126,7 @@ var app = new Vue({
                         product.tags.filter((tag) =>{
                         if(tag == selected_category){
                             this.category_products.push(product);
-                            console.log(product, tag);
+
                         }
                       })
                     }
