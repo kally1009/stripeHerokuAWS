@@ -110,7 +110,7 @@ var app = new Vue({
               this.selected_category = "Highlights";
             }
 
-            if(app.selected_category=="Highlights"){
+            if(this.selected_category=="Highlights"){
                 this.category_products=app.products
 //                return this.category_products;
             }
@@ -120,7 +120,7 @@ var app = new Vue({
                     this.products.forEach(function(product,index){
                     product.tags.filter(function(tag){
                         if(tag == app.selected_category){
-                            app.category_products.push(product);
+                            this.category_products.push(product);
                             console.log(product, tag);
                         }
                     })
