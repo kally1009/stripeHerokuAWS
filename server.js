@@ -46,7 +46,7 @@ app.get("/prices", async (req, res) => {
 
   let productPrices = [];
 
-  console.log("getting all prices");
+//  console.log("getting all prices");
 
   try {
 
