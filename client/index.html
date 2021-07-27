@@ -177,6 +177,11 @@
 
               <div v-if="page=='checkout'" id="checkout">
                 <h2>Checkout</h2>
+                <div id="empty-cart" v-if="cart.length==0">
+                  <p>{{ cart_empty }}</p>
+                </div>
+
+
                 <div id="cg" v-for="(product, i) in cart" :key="i">
                   <div class="cart-img">
                     <v-img :src="product.image" height="100px" width="100px">
@@ -185,15 +190,18 @@
                     <p>{{ product.title }}</p>
                   </div>
                   <div id="price">
-                    <p>Price: ${{ product.amount }}</p>
+                    <p>Price: ${{product.amount}}</p>
                   </div>
                   <div id="remove-btn">
                     <v-btn tile color="white" class="elevation-0" v-on:click="deleteFromCart(i)"><v-icon>mdi-close</v-icon></v-btn>
                   </div>
                   <hr>
                 </div>
-
+                <div id="checkout-btn" v-if="cart.length>0">
+                  <v-btn id="buy-btn" color="#006064" dark v-on:click="postPrice" v-model="cart">Checkout</v-btn>
+                </div>
               </div>
+              
           </v-main>
         </v-app>
     </div>
