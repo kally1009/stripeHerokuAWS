@@ -133,7 +133,7 @@ var app = new Vue({
                // return this.category_products;
              }
 
-            }
+           })
 
         }
     }
