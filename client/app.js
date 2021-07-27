@@ -121,7 +121,6 @@ var app = new Vue({
                     this.category_products=[]
 
                     this.products.forEach((product,index)=>{
-                      console.log(product);
                       if (product.tags) {
                         product.tags.filter((tag) =>{
                         if(tag == selected_category){
