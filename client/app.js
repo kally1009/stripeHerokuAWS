@@ -100,8 +100,6 @@ var app = new Vue({
         },
 
         filteredCategory:  function (selected_category)   {
-            console.log(selected_category);
-//            console.log(sele cted_category);
 
             if (selected_category === undefined) {
               console.log("setting selected category to HIGHLIGHTS");
@@ -110,7 +108,6 @@ var app = new Vue({
 
             if(selected_category=="Highlights"){
                 this.category_products=app.products
-//                return this.category_products;
             }
             else{
                     this.category_products=[]
@@ -118,14 +115,14 @@ var app = new Vue({
                     this.products.forEach((product,index)=>{
                       if (product.tags) {
                         product.tags.filter((tag) =>{
-                        if(tag == selected_category){
-                            this.category_products.push(product);
 
-                        }
-                      })
-                    }
-                })
-               // return this.category_products;
+                          if(tag == selected_category){
+                              this.category_products.push(product);
+                          }
+
+                        })
+                      }
+                    })
              }
 
            },
