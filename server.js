@@ -68,6 +68,10 @@ app.get("/prices", async (req, res) => {
           tags: price.product.metadata.tags,
        };
 
+       if(obj.tags){
+         obj.tags = obj.tags.split(',');
+       }
+
        if(obj.image) {
          productPrices.push(obj);
        }
