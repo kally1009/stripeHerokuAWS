@@ -38,12 +38,8 @@ var app = new Vue({
     methods:{
 
         getProducts: function(){
-
-            console.log("Hit /prices endpoint for products");
-
             fetch(`${url}/prices`).then(function(response){
                 response.json().then(function(data){
-//                    console.log(data);
                     if(data){
                         app.products=data;
                         app.category_products = app.products;
