@@ -2,6 +2,7 @@ const express = require('express');
 const util = require('util');
 const app = express();
 const { resolve } = require('path');
+const AWS = require('aws-sdk')
 // Copy the .env.example in the root into a .env file in this folder
 //require('dotenv').config({ path: './.env' });
 
