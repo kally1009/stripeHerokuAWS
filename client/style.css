@@ -265,3 +265,16 @@ hr {
     grid-column: 2/6;
     margin-top: 20px;
 }
+
+#checkout-btn {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 550px 150px 1fr;
+    grid-column-start: 2;
+}
+#buy-btn{
+    align-items: center;
+    display: flex;
+    justify-content:center;
+    grid-column-start: 3;
+}
