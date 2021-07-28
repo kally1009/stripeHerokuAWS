@@ -116,7 +116,9 @@ app.post('/create-checkout-session', async (req, res) => {
     cancel_url: `${domainURL}/cancelled.html`,
   });
 
-  return res.redirect(303, session.url);
+  return res.json({
+    url: session.url
+  })
 });
 
 // Webhook handler for asynchronous events.
