@@ -51,11 +51,11 @@ var app = new Vue({
         postPrice: ()=>{
             var line_items=[
               {
-                price:price_1JFjVsHxgK3tLKrKqrCyYfhK,
+                price: 'price_1JFjVsHxgK3tLKrKqrCyYfhK',
                 quantity: 1
               },
               {
-                price:price_1JFjhmHxgK3tLKrKFk2mFJ39,
+                price: 'price_1JFjhmHxgK3tLKrKFk2mFJ39',
                 quantity: 1
               }
             ]
