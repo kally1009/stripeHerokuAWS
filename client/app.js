@@ -10,6 +10,7 @@ var app = new Vue({
         search_string:"",
         page:"home",
         category_products:[],
+        cart_empty:"The cart is empty",
         cart:[
 
         ],
