@@ -1,6 +1,6 @@
 const express = require('express');
-const cors = require('cors');
-const app = express();
+var cors = require('cors');
+var app = express();
 const { resolve } = require('path');
 const AWS = require('aws-sdk')
 // Copy the .env.example in the root into a .env file in this folder
@@ -103,7 +103,7 @@ app.get('/checkout-session', async (req, res) => {
 
 app.post('/create-checkout-session', async (req, res) => {
   const domainURL = serverURL;
-
+  //res.setHeader("Access-Control-Allow-Origin")
   console.log(req.body);
 
   const pmTypes = ('card').split(',').map((m) => m.trim());

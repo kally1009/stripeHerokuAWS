@@ -73,6 +73,7 @@ var app = new Vue({
                 method: "POST",
                 headers:{
                     "content-type":"application/json"
+
                 },
                 body: JSON.stringify(line_items)
             })

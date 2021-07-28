@@ -22,7 +22,7 @@
           <v-main>
                 <nav>
                 <div id="logo">
-                  <a href="index.html"><img src="/images/naturstic.png" alt="" height="35px"></a>
+                  <a href="index.html"><img src="images/naturstic.png" alt="" height="35px"></a>
                 </div>
 
                 <ul>
@@ -37,7 +37,7 @@
                   </div>
                   </li>
                   <a  id="nav-color" href="#"><li v-on:click="page='about'">About</li></a>
-                  <a href="#"><img src="/images/cart-alt.svg" alt="" height="25px" v-on:click="page='checkout'"></a>
+                  <a href="#"><img src="images/cart-alt.svg" alt="" height="25px" v-on:click="page='checkout'"></a>
                 </ul>
               </nav>
               <div v-if="page=='home'">
@@ -45,7 +45,7 @@
                   <p class="body-text"><strong>{{selected_category}}</strong></p>
                   <div class="search-bar">
                     <div class="search-icon">
-                      <img src="../images/search-1.svg" alt="" height="15px">
+                      <img src="images/search-1.svg" alt="" height="15px">
                     </div>
                     <input type="text" placeholder="Search high-resolution photos" v-model="searchString" v-on:keydown.enter="searchProducts">
                   </div>
