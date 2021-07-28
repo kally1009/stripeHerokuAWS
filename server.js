@@ -102,19 +102,14 @@ app.get('/checkout-session', async (req, res) => {
 app.post('/create-checkout-session', async (req, res) => {
   const domainURL = serverURL;
 
-  const { quantity } = req.body;
+  console.log(req.body);
 
   const pmTypes = ('card').split(',').map((m) => m.trim());
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: pmTypes,
     mode: 'payment',
-    line_items: [
-      {
-        price: process.env.PRICE,
-        quantity: quantity
-      },
-    ],
+    line_items: req.body,
     // ?session_id={CHECKOUT_SESSION_ID} means the redirect will have the session ID set as a query param
     success_url: `${domainURL}/success.html?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${domainURL}/cancelled.html`,
