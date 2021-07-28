@@ -85,7 +85,7 @@ var app = new Vue({
 
             this.category_products.forEach(function(item){
 
-                if(item.title.toLowerCase().indexOf(searchString)!==-1){
+                if(item.name.toLowerCase().indexOf(searchString)!==-1){
                     console.log(item.title)
                     product_array.push(item)
                 }
