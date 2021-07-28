@@ -1,4 +1,4 @@
-var url = "https://naturistic-demo.herokuapp.com"
+var url = "https://naturistic.herokuapp.com/"
 // var selected_category = "Highlights"
 var app = new Vue({
     el: "#app",
