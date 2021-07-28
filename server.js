@@ -1,5 +1,5 @@
 const express = require('express');
-const util = require('util');
+const cors = require('cors');
 const app = express();
 const { resolve } = require('path');
 const AWS = require('aws-sdk')
@@ -16,6 +16,8 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
     url: "https://Naturistic.github.io"
   }
 });
+
+app.use(cors());
 
 app.use(express.static('client'));
 
