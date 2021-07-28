@@ -103,7 +103,6 @@ app.get('/checkout-session', async (req, res) => {
 
 app.post('/create-checkout-session', async (req, res) => {
   const domainURL = serverURL;
-  //res.setHeader("Access-Control-Allow-Origin")
   console.log(req.body);
 
   const pmTypes = ('card').split(',').map((m) => m.trim());
