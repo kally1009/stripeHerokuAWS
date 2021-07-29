@@ -50,16 +50,29 @@ var app = new Vue({
         },
 
         postPrice: function(){
-            var line_items=[
-            ]
+            var line_items=[];
+            var success_images=[];
+            var sendObj = {};
+            var Obj1={};
+            var Obj2={};
                 //loop through for each object in the cart.
                 this.cart.forEach((product,index)=>{
-                  let Obj = {
+                  Obj1 = {
                         price: product.priceId,
                         quantity: 1
+                   },
+                   Obj2 = {
+                       image: product.image,
+                       bigURL: product.bigImage,
                    }
-                   line_items.push(Obj);
+                   line_items.push(Obj1);
+                   success_images.push(Obj2);
+
                 }),
+                sendObj={
+                    lineItems:line_items,
+                    successImages: success_images,
+                }
 
             fetch(`${url}/create-checkout-session`,{
                 method: "POST",
@@ -67,7 +80,7 @@ var app = new Vue({
                     "content-type":"application/json"
 
                 },
-                body: JSON.stringify(line_items)
+                body: JSON.stringify(sendObj)
             }).then(function (response){
                 response.json().then(function (responseData){
                     if (responseData.url){
@@ -81,7 +94,6 @@ var app = new Vue({
             var product_array = []
             var searchString=this.searchString;
             searchString = searchString.trim().toLowerCase();
-
             this.category_products.forEach(function(item){
 
                 if(item.name.toLowerCase().indexOf(searchString)!==-1){
