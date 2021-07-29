@@ -4,59 +4,52 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Stripe Checkout Sample</title>
-
-    <link rel="icon" href="../images/favacon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/global.css" />
+    <title>Naturistic - Success Payment</title>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link rel="icon" href="images/favacon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
     <script src="./success.js" defer></script>
   </head>
 
   <body>
-    <div class="sr-root">
-      <div class="sr-main">
-        <header class="sr-header">
-          <div class="sr-header__logo"></div>
-        </header>
+    <div id="app">
+      <v-app>
+      <v-main>
+        <nav>
+          <div id="logo">
+            <a href="index.html"><img src="images/naturstic.png" alt="" height="35px"></a>
+          </div>
+        </nav>
 
-        <div class="sr-payment-summary completed-view">
-          <h1>Your payment succeeded</h1>
+        <div class="grid-center">
+          <v-card>
+            <v-card-title class="justify-center">Your Payment Succeeded</v-card-title>
+            <v-card-text>
+            <button><a href="index.html" class="black--text"><v-icon>mdi-keyboard-backspace</v-icon>Back to Naturistic</a></button>
+            </v-card-text>
+
+          </v-card>
+          <v-card>
           <h4>
             View CheckoutSession response:
           </h4>
-        </div>
+        
         <div class="sr-section completed-view">
           <div class="sr-callout">
             <pre></pre>
           </div>
-          <button onclick="window.location.href = '/';">Restart demo</button>
         </div>
-      </div>
-
-      <div class="sr-content">
-        <div class="pasha-image-stack">
-          <img
-            src="https://picsum.photos/280/320?random=1"
-            width="140"
-            height="160"
-          />
-          <img
-            src="https://picsum.photos/280/320?random=2"
-            width="140"
-            height="160"
-          />
-          <img
-            src="https://picsum.photos/280/320?random=3"
-            width="140"
-            height="160"
-          />
-          <img
-            src="https://picsum.photos/280/320?random=4"
-            width="140"
-            height="160"
-          />
+        </v-card>
         </div>
-      </div>
+      </v-main>
+    </v-app>
     </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="app.js"></script>
 </html>
