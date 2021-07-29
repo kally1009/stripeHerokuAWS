@@ -284,3 +284,14 @@ hr {
     justify-content:center;
     grid-column-start: 3;
 }
+
+.div-cancel-success {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+
+}
+
+#display-card {
+    padding: 20px 200px;
+}
