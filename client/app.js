@@ -51,24 +51,15 @@ var app = new Vue({
 
         postPrice: ()=>{
             var line_items=[
-              {
-                price: 'price_1JHt7GA3XQh5RBbNtjzzUz7C',
-                quantity: 1
-              },
-              {
-                price: 'price_1JHt6YA3XQh5RBbNYzGU75g6',
-                quantity: 1
-              }
             ]
                 //loop through for each object in the cart.
-//                this.cart.forEach((product,index)=>{
-//                    var price=product.price
-//                    let Obj = {
-//                        price: price,
-//                        quantity: 1
-//                    }
-//                    line_items.push(Obj);
-//                }),
+                this.cart.forEach((product,index)=>{
+                  let Obj = {
+                        price: product.priceId,
+                        quantity: 1
+                   }
+                   line_items.push(Obj);
+                }),
 
             fetch(`${url}/create-checkout-session`,{
                 method: "POST",
@@ -103,7 +94,6 @@ var app = new Vue({
 
             })
             app.category_products=product_array;
-            console.log(app.category_products);
             this.searchString="";
             searchString="";
 

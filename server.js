@@ -36,6 +36,14 @@ app.get('/', (req, res) => {
   const path = resolve('index.html');
   res.sendFile(path);
 });
+app.get('/cancelled', (req, res) => {
+  const path = resolve('client/cancelled.html');
+  res.sendFile(path);
+});
+app.get('/success', (req, res) => {
+  const path = resolve('client/success.html');
+  res.sendFile(path);
+});
 
 // minimize endpoints to fit rebuilt SPA style
 
@@ -111,9 +119,10 @@ app.post('/create-checkout-session', async (req, res) => {
     payment_method_types: pmTypes,
     mode: 'payment',
     line_items: req.body,
+    metadata: {msg: "Stuff getting back"},
     // ?session_id={CHECKOUT_SESSION_ID} means the redirect will have the session ID set as a query param
     success_url: `${domainURL}/success.html?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${domainURL}/cancelled.html`,
+    cancel_url: `${domainURL}/cancelled`,
   });
 
   return res.json({
