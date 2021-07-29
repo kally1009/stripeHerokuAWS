@@ -49,7 +49,7 @@ var app = new Vue({
             })
         },
 
-        postPrice: ()=>{
+        postPrice: function(){
             var line_items=[
             ]
                 //loop through for each object in the cart.
