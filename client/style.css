@@ -53,7 +53,7 @@ nav ul img {
 /* Hero */
 
 #hero-section {
-    background-image: url("images/nature-3719233.jpg");
+    background-image: url("images/naturisticanim.gif");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -62,6 +62,97 @@ nav ul img {
     display: grid;
     grid-template-rows: 1fr 50px 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#hero-section2 {
+    background-image: url("images/nature-3719233_640.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#hero-section3 {
+    background-image: url("images/snow_mountain1green.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#hero-section4 {
+    background-image: url("images/milky-way-green.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#hero-section5 {
+    background-image: url("images/forest-931706.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#hero-section6 {
+    background-image: url("images/desert-1270345_640.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#hero-section7 {
+    background-image: url("images/photo-1495567720989-cebdbdd97913.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#hero-section8 {
+    background-image: url("images/garden-19830_1920.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .body-text {
@@ -69,9 +160,14 @@ nav ul img {
     flex-direction: column;
     justify-content: flex-end;
     grid-column-start: 2;
-    font-size: 18px;
-    color: white;
-    padding-bottom: 10px;
+    font-size: 20px;
+    color: black;
+    padding-top: 20px;
+}
+
+#selected-cat {
+    display: grid;
+    grid-template-columns: 1fr 1000px 1fr;
 }
 
 .search-bar {
@@ -88,6 +184,7 @@ nav ul img {
     width: 500px;
     outline: none;
     padding-left: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .search-icon{
@@ -97,12 +194,13 @@ nav ul img {
     background-color: white;
     height: 40px;
     padding: 0px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* Image slider */
 
 #carousel {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 50px;
 }
 
@@ -118,6 +216,13 @@ nav ul img {
     padding-bottom: 80px;
 }
 
+#card-title {
+    padding-left: 50px;
+}
+
+#card-desc {
+    padding-left: 50px;
+}
 /* About */
 
 #developers {

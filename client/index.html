@@ -41,38 +41,119 @@
                 </ul>
               </nav>
               <div v-if="page=='home'">
-                <div id="hero-section">
-                  <p class="body-text"><strong>{{selected_category}}</strong></p>
-                  <div class="search-bar">
-                    <div class="search-icon">
-                      <img src="images/search-1.svg" alt="" height="15px">
+                <div v-if="selected_category=='Highlights'">
+                  <div id="hero-section">
+                    <div class="search-bar">
+                      <div class="search-icon">
+                        <img src="images/search-1.svg" alt="" height="15px">
+                      </div>
+                      <input type="text" placeholder="Search high-resolution photos" v-model="searchString" v-on:keydown.enter="searchProducts">
                     </div>
-                    <input type="text" placeholder="Search high-resolution photos" v-model="searchString" v-on:keydown.enter="searchProducts">
                   </div>
                 </div>
 
+                <div v-else-if="selected_category=='Water'">
+                  <div id="hero-section2">
+                    <div class="search-bar">
+                      <div class="search-icon">
+                        <img src="images/search-1.svg" alt="" height="15px">
+                      </div>
+                      <input type="text" placeholder="Search high-resolution photos" v-model="searchString" v-on:keydown.enter="searchProducts">
+                    </div>
+                  </div>
+                </div>
+
+                <div v-else-if="selected_category=='Mountains'">
+                  <div id="hero-section3">
+                    <div class="search-bar">
+                      <div class="search-icon">
+                        <img src="images/search-1.svg" alt="" height="15px">
+                      </div>
+                      <input type="text" placeholder="Search high-resolution photos" v-model="searchString" v-on:keydown.enter="searchProducts">
+                    </div>
+                  </div>
+                </div>
+
+                <div v-else-if="selected_category=='Space'">
+                  <div id="hero-section4">
+                    <div class="search-bar">
+                      <div class="search-icon">
+                        <img src="images/search-1.svg" alt="" height="15px">
+                      </div>
+                      <input type="text" placeholder="Search high-resolution photos" v-model="searchString" v-on:keydown.enter="searchProducts">
+                    </div>
+                  </div>
+                </div>
+
+                <div v-else-if="selected_category=='Trees'">
+                  <div id="hero-section5">
+                    <div class="search-bar">
+                      <div class="search-icon">
+                        <img src="images/search-1.svg" alt="" height="15px">
+                      </div>
+                      <input type="text" placeholder="Search high-resolution photos" v-model="searchString" v-on:keydown.enter="searchProducts">
+                    </div>
+                  </div>
+                </div>
+
+                <div v-else-if="selected_category=='Desert'">
+                  <div id="hero-section6">
+                    <div class="search-bar">
+                      <div class="search-icon">
+                        <img src="images/search-1.svg" alt="" height="15px">
+                      </div>
+                      <input type="text" placeholder="Search high-resolution photos" v-model="searchString" v-on:keydown.enter="searchProducts">
+                    </div>
+                  </div>
+                </div>
+
+                <div v-else-if="selected_category=='Sunsets'">
+                  <div id="hero-section7">
+                    <div class="search-bar">
+                      <div class="search-icon">
+                        <img src="images/search-1.svg" alt="" height="15px">
+                      </div>
+                      <input type="text" placeholder="Search high-resolution photos" v-model="searchString" v-on:keydown.enter="searchProducts">
+                    </div>
+                  </div>
+                </div>
+
+                <div v-else-if="selected_category=='Flowers'">
+                  <div id="hero-section8">
+                    <div class="search-bar">
+                      <div class="search-icon">
+                        <img src="images/search-1.svg" alt="" height="15px">
+                      </div>
+                      <input type="text" placeholder="Search high-resolution photos" v-model="searchString" v-on:keydown.enter="searchProducts">
+                    </div>
+                  </div>
+                </div>
+        
+                <div id="selected-cat">
+                  <p class="body-text"><strong>{{selected_category}}</strong></p>
+                </div>
                 <div id="carousel">
                 <template>
                   <v-sheet class="mx-auto" elevation="8" max-width="1000" id="carousel">
                     <v-slide-group class="pa-4" cycle active-class="success" show-arrows>
                       <v-slide-item v-for="(product, i) in category_products" :key="product._id" v-slot="{ active, toggle }">
                         <v-card class="ma-4" height="200" width="200" @click="toggle" >
-                        <v-img v-bind:src="product.image" height="200" width="200" v-on:click="active=true">
+                        <v-img v-bind:src="product.image" height="200" width="200">
                           <v-row class="fill-height" align="center" justify="center">
 
                           <v-dialog v-if="active" v-model="dialog" persistent max-width="600px">
-                            <template v-slot:activator="{ on }">
-                               <v-btn color=#006064 dark v-on="on">Open Image</v-btn>
+                            <template v-slot:activator="{ on }"> 
+                               <v-btn color="#006064" dark v-on="on">Open Image</v-btn>
                             </template>
                             <v-card>
                               <v-card flat tile class="d-flex align-end flex-column mb-6">
-                                <v-btn tile color="white" @click="dialog = false" class="elevation-0"><v-icon>mdi-close</v-icon></v-btn>
+                                <v-btn tile color="white" @click="dialog=false" class="elevation-0"><v-icon>mdi-close</v-icon></v-btn>
                               </v-card>
                               <v-card-title>
-                                <span class="headline">{{ product.title }}</span>
-                                <v-card-text>{{ product.description }}</v-card-text>
+                                <span id="card-title" class="headline">{{ product.title }}</span>
+                                <v-card-text id="card-desc">{{ product.description }}</v-card-text>
                               </v-card-title>
-
+                                
                               <v-card id="popup" flat tile class="d-flex justify-center mb-6">
                                 <v-img :src="product.image" max-height="300" max-width="auto" contain>
                               </v-card>
@@ -81,7 +162,7 @@
                               </v-card>
                             </v-card>
                           </v-dialog>
-
+                          
                           </v-row>
                         </v-card>
                       </v-slide-item>
